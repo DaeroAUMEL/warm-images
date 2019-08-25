@@ -7,6 +7,6 @@ stages:
 production:
   stage: production
   script:
-    - docker login -u daero -p 
+    - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
     - docker build --tag Daero/warm-images:$CI_COMMIT_TAG-$CI_COMMIT_SHORT_SHA
     - docker push Daero/warm-images:$CI_COMMIT_TAG-$CI_COMMIT_SHORT_SHA
