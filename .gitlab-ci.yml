@@ -7,6 +7,6 @@ stages:
 production:
   stage: production
   script:
-    - docker login -u DOCKER_USERNAME --password-stdin DOCKER_PASSWORD
-    - docker build --tag DOCKER_USERNAME/warm-images:CI_COMMIT_TAG-CI_COMMIT_SHORT_SHA
-    - docker push DOCKER_USERNAME/warm-images:CI_COMMIT_TAG-CI_COMMIT_SHORT_SHA
+    - docker login -u $K8S_SECRET_DOCKER_USERNAME --password-stdin $K8S_SECRET_DOCKER_PASSWORD
+    - docker build --tag $K8S_SECRET_DOCKER_USERNAME/warm-images:$CI_COMMIT_TAG-$CI_COMMIT_SHORT_SHA
+    - docker push $K8S_SECRET_DOCKER_USERNAME/warm-images:$CI_COMMIT_TAG-$CI_COMMIT_SHORT_SHA
