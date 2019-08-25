@@ -3,7 +3,7 @@ image: docker:latest
 
 stages:
   - production
-
+ 
 production:
   stage: production
   script:
