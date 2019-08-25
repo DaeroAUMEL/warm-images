@@ -1,5 +1,5 @@
 FROM docker:latest
-MAINTAINER Daero
+MAINTAINER daero
 
 # Install required packages
 ADD ["build/pull.sh", \
